@@ -69,7 +69,7 @@ app.post('/sms',  async (req, res) => {
   }
   else {
     twiml.message(`
-      Maaf kami hanya dapat menjawab pertanyaan terkait lokasi, tiket. \n\nSilahkan ketik *lokasi* atau *tiket* untuk mengetahui hal tersebut. \n\nJika ada pertanyaan diluar dari lokasi dan tiket silahkan hubungi PIC: wa.me/6282242361317 (KEVIN)  \nketuk link di atas untuk langsung terhubung dengan pic kami.
+      Maaf kami hanya dapat menjawab pertanyaan terkait lokasi, tiket. \n\nSilahkan ketik *lokasi* atau *tiket* untuk mengetahui hal tersebut. \n\nJika ada pertanyaan diluar dari lokasi dan tiket silahkan hubungi PIC: wa.me/${process.env.PIC_NUMBER} (KEVIN)  \nketuk link di atas untuk langsung terhubung dengan pic kami.
     `)
     res.writeHead(200, { "Content-Type": "text/xml" })
     return res.end(twiml.toString())
